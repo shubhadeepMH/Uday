@@ -1,0 +1,10 @@
+{
+  "description": "Streamlines task management by organizing and tracking project files, enhancing productivity for teams and individuals.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
