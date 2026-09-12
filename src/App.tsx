@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { jsPDF } from 'jspdf'
+import logoImg from './logo.png'
 
 /* ─── Scroll reveal hook ─── */
 function useReveal() {
@@ -113,16 +114,15 @@ function Navbar({
           style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }}
           aria-label="Go to top"
         >
-          <div style={{
-            width: 36, height: 36, borderRadius: 10,
-            background: '#e0e5ec',
-            boxShadow: '4px 4px 8px #babecc, -4px -4px 8px #ffffff',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '0.75rem', fontWeight: 800, color: '#ff4757',
-            fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.04em',
-          }}>
-            UC
-          </div>
+          <img
+            src={logoImg}
+            alt="Uday Chatterjee Logo"
+            style={{
+              width: 36, height: 36, borderRadius: 10,
+              objectFit: 'cover',
+              boxShadow: '4px 4px 8px #babecc, -4px -4px 8px #ffffff',
+            }}
+          />
           <div>
             <div style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--foreground)', letterSpacing: '-0.01em', lineHeight: 1.1 }}>Uday Chatterjee</div>
             <div style={{ fontSize: '0.65rem', color: 'var(--foreground-muted)', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Software Developer</div>
@@ -243,16 +243,15 @@ function DeveloperCard() {
 
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-        <div style={{
-          width: 44, height: 44, borderRadius: 12,
-          background: 'linear-gradient(135deg, var(--accent) 0%, #c0392b 100%)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '0.9rem', fontWeight: 800, color: '#fff', flexShrink: 0,
-          fontFamily: 'JetBrains Mono, monospace',
-          boxShadow: '0 0 0 2px rgba(255,71,87,0.35)',
-        }}>
-          UC
-        </div>
+        <img
+          src={logoImg}
+          alt="Uday Chatterjee Profile"
+          style={{
+            width: 44, height: 44, borderRadius: 12,
+            objectFit: 'cover', flexShrink: 0,
+            boxShadow: '0 0 0 2px rgba(255,71,87,0.35)',
+          }}
+        />
         <div>
           <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--dark-fg)' }}>Uday Chatterjee</div>
           <div className="font-mono" style={{ fontSize: '0.68rem', color: 'var(--dark-fg-muted)', letterSpacing: '0.04em' }}>Software Developer</div>
@@ -427,14 +426,16 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
 
 /* ─── Skills ─── */
 const SKILL_GROUPS = [
-  { category: 'Programming',      icon: '⌨', skills: ['JavaScript', 'TypeScript', 'Java'] },
-  { category: 'Frontend',         icon: '🖥', skills: ['React', 'React Native', 'HTML5', 'CSS3', 'Tailwind CSS'] },
-  { category: 'Backend',          icon: '⚙', skills: ['Django', 'REST APIs'] },
-  { category: 'State Management', icon: '🔄', skills: ['Redux Toolkit', 'React Context'] },
-  { category: 'Cloud',            icon: '☁', skills: ['AWS S3'] },
-  { category: 'Mobile',           icon: '📱', skills: ['Expo', 'Expo Router', 'Animated API', 'FlatList Optimization', 'WebView'] },
-  { category: 'Tools & Methods',  icon: '🛠', skills: ['Git', 'SDLC', 'Agile', 'Waterfall', 'Spiral'] },
-  { category: 'Soft Skills',      icon: '🤝', skills: ['Communication', 'Teamwork', 'Problem Solving', 'Attention to Detail'] },
+  { category: 'Programming',           icon: '⌨', skills: ['Java', 'JavaScript', 'TypeScript'] },
+  { category: 'Web Technologies',      icon: '🌐', skills: ['HTML5', 'CSS3', 'DOM', 'JSON', 'Responsive Web Design'] },
+  { category: 'Frontend',              icon: '🖥', skills: ['React', 'React Native (Expo)', 'Tailwind CSS'] },
+  { category: 'State Management',      icon: '🔄', skills: ['Redux Toolkit', 'React Context API'] },
+  { category: 'Backend',               icon: '⚙', skills: ['Django (RESTful APIs)', 'Server-Side Integration'] },
+  { category: 'Cloud & Storage',       icon: '☁', skills: ['AWS S3'] },
+  { category: 'Mobile',                icon: '📱', skills: ['Expo Router', 'Animated API', 'FlatList Optimisation', 'WebView'] },
+  { category: 'Development Practices', icon: '📐', skills: ['Requirements Analysis', 'SDLC (Agile, Waterfall, Spiral, Hybrid)'] },
+  { category: 'Tools',                 icon: '🛠', skills: ['Git', 'MobaXterm'] },
+  { category: 'Soft Skills',           icon: '🤝', skills: ['Problem-Solving', 'Attention to Detail', 'Communication', 'Teamwork'] },
 ]
 
 function Skills() {
@@ -1170,13 +1171,16 @@ export default function App() {
       doc.setFontSize(9.5)
       
       const skillCategories = [
-        { name: "Programming Languages:", skills: "JavaScript, TypeScript, Java" },
-        { name: "Frontend Development:", skills: "React, React Native, HTML5, CSS3, Tailwind CSS" },
-        { name: "Backend Development:", skills: "Django, REST APIs" },
-        { name: "State Management:", skills: "Redux Toolkit, React Context" },
-        { name: "Cloud & Dev Tools:", skills: "AWS S3, Git" },
-        { name: "Mobile Ecosystem:", skills: "Expo, Expo Router, Animated API, FlatList Optimization" },
-        { name: "Soft Skills:", skills: "Communication, Teamwork, Problem Solving, Attention to Detail" }
+        { name: "Programming:", skills: "Java, JavaScript, TypeScript" },
+        { name: "Web Technologies:", skills: "HTML5, CSS3, DOM, JSON, Responsive Web Design" },
+        { name: "Frontend:", skills: "React, React Native (Expo), Tailwind CSS" },
+        { name: "State Management:", skills: "Redux Toolkit, React Context API" },
+        { name: "Backend:", skills: "Django (RESTful APIs), Server-Side Integration" },
+        { name: "Cloud & Storage:", skills: "AWS S3" },
+        { name: "Mobile:", skills: "Expo Router, Animated API, FlatList Optimisation, WebView" },
+        { name: "Development Practices:", skills: "Requirements Analysis, SDLC (Agile, Waterfall, Spiral, Hybrid)" },
+        { name: "Tools:", skills: "Git, MobaXterm" },
+        { name: "Soft Skills:", skills: "Problem-Solving, Attention to Detail, Communication, Teamwork" }
       ]
 
       skillCategories.forEach(cat => {

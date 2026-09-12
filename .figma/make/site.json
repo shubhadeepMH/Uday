@@ -3,6 +3,9 @@
   "robots": {
     "index": false
   },
+  "icons": {
+    "icon": "/logo.png"
+  },
   "accessibility": {
     "addBypassLinks": false,
     "ignoreReducedMotion": false
