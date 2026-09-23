@@ -219,7 +219,7 @@ function Navbar({
 
 /* ─── Developer Card ─── */
 function DeveloperCard() {
-  const techs = ['React', 'TypeScript', 'React Native', 'Django', 'Redux Toolkit', 'AWS S3', 'Tailwind CSS', 'REST APIs']
+  const techs = ['React', 'TypeScript', 'React Native', 'Django', 'Redux Toolkit', 'AWS S3', 'AWS EC2', 'Tailwind CSS']
 
   return (
     <div
@@ -262,14 +262,14 @@ function DeveloperCard() {
       {/* Stats grid */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
         {[
-          { label: 'Experience', value: '1+ Year' },
-          { label: 'Specialty', value: 'Full-Stack' },
+          { label: 'Experience', value: '1.5+ Yrs Mindscale' },
+          { label: 'Specialty', value: 'Full-Stack & Mobile' },
           { label: 'Location', value: 'Kolkata, IN' },
           { label: 'Availability', value: 'Full-time' },
         ].map(item => (
           <div key={item.label} className="stat-cell">
             <div className="font-mono" style={{ fontSize: '0.6rem', color: 'var(--dark-fg-muted)', marginBottom: 4, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{item.label}</div>
-            <div style={{ fontWeight: 600, fontSize: '0.8rem', color: 'var(--dark-fg)' }}>{item.value}</div>
+            <div style={{ fontWeight: 600, fontSize: '0.78rem', color: 'var(--dark-fg)' }}>{item.value}</div>
           </div>
         ))}
       </div>
@@ -321,7 +321,7 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
         overflow: 'hidden',
       }}
     >
-      {/* Subtle radial lighting hotspot (top-left, per design system) */}
+      {/* Subtle radial lighting hotspot */}
       <div
         aria-hidden="true"
         style={{
@@ -335,7 +335,7 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
       <div style={{ maxWidth: 1152, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr auto', gap: 64, alignItems: 'center' }}>
         {/* Left */}
         <div ref={leftRef} className="reveal">
-          <div className="section-label">Portfolio · 2024–Present</div>
+          <div className="section-label">Portfolio · 2025–Present</div>
 
           <h1
             style={{
@@ -355,12 +355,12 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '20px 0 24px' }}>
             <div style={{ height: 2, width: 28, background: 'var(--accent)', borderRadius: 2 }} />
             <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--foreground-muted)', letterSpacing: '-0.01em' }}>
-              Software Developer
+              Software Developer | Full-Stack &amp; Mobile
             </span>
           </div>
 
-          <p style={{ fontSize: '1rem', color: 'var(--foreground-muted)', lineHeight: 1.75, maxWidth: 500, marginBottom: 36 }}>
-            Results-driven developer specializing in <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>Full-Stack</strong> and <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>Cross-Platform Application Development</strong>. Building scalable web and mobile applications with React, React Native, Django, TypeScript, and AWS.
+          <p style={{ fontSize: '1rem', color: 'var(--foreground-muted)', lineHeight: 1.75, maxWidth: 540, marginBottom: 36 }}>
+            Results-driven Software Developer with a BSc in Computer Science and over a year of hands-on industry experience building scalable full-stack and cross-platform mobile applications with <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>React</strong>, <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>React Native</strong>, <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>TypeScript</strong>, <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>Django</strong>, and <strong style={{ color: 'var(--foreground)', fontWeight: 700 }}>AWS</strong>.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 40 }}>
@@ -377,8 +377,8 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
             </button>
           </div>
 
-          {/* LinkedIn */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+          {/* LinkedIn & Phone */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
             <span className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Connect</span>
             <div style={{ height: 1, width: 16, background: 'var(--border)' }} />
             <a
@@ -402,6 +402,24 @@ function Hero({ onDownloadResume }: { onDownloadResume?: (e: React.MouseEvent) =
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
+            </a>
+            <a
+              href="tel:+918944990853"
+              style={{
+                display: 'flex', alignItems: 'center', gap: 8,
+                padding: '9px 16px',
+                background: 'var(--background)',
+                boxShadow: 'var(--shadow-card)',
+                borderRadius: 'var(--radius-md)',
+                color: 'var(--foreground-muted)',
+                textDecoration: 'none', fontSize: '0.78rem', fontWeight: 600,
+                letterSpacing: '0.04em',
+                transition: 'all 200ms ease',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--accent)'; (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-floating)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--foreground-muted)'; (e.currentTarget as HTMLElement).style.boxShadow = 'var(--shadow-card)' }}
+            >
+              📞 +91 89449 90853
             </a>
           </div>
         </div>
@@ -503,47 +521,50 @@ function Skills() {
 const PROJECTS = [
   {
     title: 'Full-Stack Blog Platform',
+    period: 'April 2025 – Jun 2025',
     type: 'Web Application',
-    stack: ['React', 'TypeScript', 'Django REST Framework', 'AWS S3', 'Tailwind CSS'],
-    description: 'Developed a scalable blogging platform with secure authentication, REST APIs, AWS S3 media storage, responsive UI, reusable components, rich-text editing, and SEO-friendly architecture.',
-    highlights: ['Full Stack', 'REST APIs', 'Cloud Storage', 'Responsive Design'],
+    stack: ['React', 'TypeScript', 'Django', 'AWS S3', 'Tailwind CSS'],
+    description: 'Architected scalable blogging platform with secure AWS S3 media handling, responsive UI, rich-text content creation, and optimized SEO.',
+    highlights: ['Full Stack', 'REST APIs', 'Cloud Storage', 'SEO Optimised'],
     icon: '📝',
     features: [
-      'Secure JWT authentication & authorization',
-      'AWS S3 media storage integration',
-      'Rich-text editor with image uploads',
-      'SEO-optimized architecture',
-      'Fully responsive across all devices',
-    ],
-  },
-  {
-    title: 'Geology & Minerals Learning App',
-    type: 'Mobile Application',
-    stack: ['React Native', 'Expo', 'Redux Toolkit', 'TypeScript'],
-    description: 'Built a production-ready educational mobile application with responsive UI, masonry gallery, advanced search, shimmer loading, interactive mineral details, geologic time scale visualization, quizzes, and API integrations.',
-    highlights: ['Cross Platform', 'Responsive', 'Animations', 'Redux'],
-    icon: '🪨',
-    features: [
-      'Masonry gallery with shimmer loading',
-      'Advanced search & filtering',
-      'Geologic time scale visualization',
-      'Interactive quiz engine',
-      'Expo Router navigation',
+      'Architected scalable blogging platform structure',
+      'Implemented secure AWS S3 media handling & storage',
+      'Built responsive UI with Tailwind CSS',
+      'Engineered rich-text content creation engine',
+      'Optimised SEO & performance strategy',
     ],
   },
   {
     title: 'Restaurant Order Management System',
-    type: 'Dashboard',
-    stack: ['React', 'Redux Toolkit', 'Tailwind CSS', 'TypeScript'],
-    description: 'Developed a restaurant ordering dashboard with dynamic order management, real-time state updates, responsive layouts, live search, reusable UI components, and modal-based editing.',
-    highlights: ['Dashboard', 'State Management', 'Reusable Components'],
+    period: 'Jun 2025 – Aug 2025',
+    type: 'Web Dashboard',
+    stack: ['React', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
+    description: 'Developed ordering frontend with Redux state architecture, responsive dashboard layout, reusable menu grid, and integrated toast notifications.',
+    highlights: ['Dashboard', 'Redux Toolkit', 'Reusable Menu Grid'],
     icon: '🍽',
     features: [
-      'Real-time order state management',
-      'Live search across orders',
-      'Modal-based order editing',
-      'Responsive dashboard layouts',
-      'Reusable component architecture',
+      'Developed restaurant ordering frontend interface',
+      'Architected centralized Redux state management',
+      'Designed responsive order management dashboard',
+      'Built reusable menu grid component',
+      'Integrated real-time toast notifications system',
+    ],
+  },
+  {
+    title: 'Geology & Minerals Learning App',
+    period: 'Sep 2025 – Nov 2025',
+    type: 'Mobile Application',
+    stack: ['React Native (Expo)', 'TypeScript', 'Redux Toolkit'],
+    description: 'Built complete mobile frontend with responsive masonry gallery, interactive detail views, colour-coded geologic time scale, quiz feature, and external mineral API integrations.',
+    highlights: ['Cross Platform', 'Masonry Gallery', 'Geologic Scale', 'API Integration'],
+    icon: '🪨',
+    features: [
+      'Built complete mobile frontend in React Native & Expo',
+      'Developed responsive masonry gallery layout',
+      'Created interactive mineral detail views',
+      'Designed colour-coded geologic time scale',
+      'Implemented interactive quiz feature & mineral API integrations',
     ],
   },
 ]
@@ -558,7 +579,7 @@ function Projects() {
         <div ref={titleRef} className="reveal" style={{ textAlign: 'center', marginBottom: 56 }}>
           <div className="section-label" style={{ justifyContent: 'center' }}>Portfolio</div>
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', fontWeight: 800, letterSpacing: '-0.025em', color: 'var(--foreground)' }} className="text-embossed">
-            Featured Projects
+            Key Projects
           </h2>
           <p style={{ color: 'var(--foreground-muted)', marginTop: 10, maxWidth: 420, margin: '10px auto 0', fontSize: '0.95rem' }}>
             Production-grade applications built with clean architecture and real-world constraints.
@@ -598,8 +619,11 @@ function Projects() {
                       {project.icon}
                     </div>
                     <div>
-                      <div className="font-mono" style={{ fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 4 }}>{project.type}</div>
-                      <h3 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', fontWeight: 800, color: 'var(--foreground)', letterSpacing: '-0.01em' }}>{project.title}</h3>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <span className="font-mono" style={{ fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>{project.type}</span>
+                        <span className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)' }}>• {project.period}</span>
+                      </div>
+                      <h3 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', fontWeight: 800, color: 'var(--foreground)', letterSpacing: '-0.01em', marginTop: 2 }}>{project.title}</h3>
                     </div>
                   </div>
 
@@ -628,12 +652,12 @@ function Projects() {
                   onClick={e => { e.stopPropagation(); setExpanded(isExpanded ? null : i) }}
                   aria-label={isExpanded ? 'Collapse features' : 'Expand features'}
                 >
-                  {isExpanded ? '▲ Collapse' : '▼ Key Features'}
+                  {isExpanded ? '▲ Collapse Details' : '▼ View Highlights'}
                 </button>
 
                 {/* Expanded feature list */}
                 {isExpanded && (
-                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border)', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 8 }}>
+                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border)', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 8 }}>
                     {project.features.map((feat, fi) => (
                       <div key={fi} style={{
                         display: 'flex', alignItems: 'flex-start', gap: 9,
@@ -663,14 +687,12 @@ function Experience() {
   const cardRef = useReveal()
 
   const responsibilities = [
-    'Developing scalable frontend architecture with React & TypeScript',
-    'Building reusable, accessible UI component libraries',
-    'Designing & integrating REST API endpoints with Django',
-    'Managing complex application state with Redux Toolkit',
-    'Building responsive mobile applications using React Native & Expo',
-    'Participating in Agile sprints, planning, and retrospectives',
-    'Conducting code reviews and contributing to technical planning',
-    'Implementing AWS S3 for media storage and delivery',
+    'Developed and maintained full-stack web and mobile applications using React, React Native, TypeScript, and Django.',
+    'Collaborated with cross-functional teams to design RESTful APIs, manage cloud storage via AWS S3, and integrate third-party services.',
+    'Led frontend architecture decisions implementing Redux Toolkit.',
+    'Participated in Agile sprints, code reviews, and technical planning.',
+    'Executed production migration and deployment of a full-stack web application, including the Django backend, database, media assets, and React/Vite frontend within an existing AWS EC2 environment.',
+    'Configured and deployed Django applications using Gunicorn, systemd, and Nginx reverse proxy, implementing separate API routing while preserving existing production services.',
   ]
 
   return (
@@ -712,34 +734,34 @@ function Experience() {
               </div>
               <div style={{ textAlign: 'right' }}>
                 <div className="badge-available">Current Role</div>
-                <div className="font-mono" style={{ marginTop: 6, fontSize: '0.68rem', color: 'var(--foreground-muted)', letterSpacing: '0.04em' }}>
-                  April 2024 – Present
+                <div className="font-mono" style={{ marginTop: 6, fontSize: '0.72rem', color: 'var(--foreground-muted)', letterSpacing: '0.04em', fontWeight: 600 }}>
+                  April 2025 – Present (1 Year 6 Months)
                 </div>
               </div>
             </div>
 
-            <p style={{ color: 'var(--foreground-muted)', lineHeight: 1.75, marginBottom: 24, fontSize: '0.9rem', maxWidth: 620 }}>
-              Worked on scalable web and mobile applications using React, React Native, TypeScript, Django, Redux Toolkit, and AWS S3. Contributed across the full product lifecycle — from architecture and development to code reviews and deployment.
+            <p style={{ color: 'var(--foreground-muted)', lineHeight: 1.75, marginBottom: 24, fontSize: '0.9rem', maxWidth: 660 }}>
+              Over a year of hands-on corporate experience building scalable full-stack web and cross-platform mobile applications. Specialized in React, React Native, TypeScript, Redux Toolkit, Django REST APIs, AWS S3, and AWS EC2 deployments with Gunicorn &amp; Nginx.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: 8, marginBottom: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 10, marginBottom: 20 }}>
               {responsibilities.map((r, i) => (
                 <div key={i} style={{
                   display: 'flex', alignItems: 'flex-start', gap: 9,
-                  padding: '10px 13px',
+                  padding: '12px 14px',
                   background: 'var(--background)',
                   boxShadow: 'var(--shadow-recessed)',
                   borderRadius: 8,
                 }}>
-                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.75rem', flexShrink: 0, marginTop: 2 }}>→</span>
-                  <span style={{ fontSize: '0.82rem', color: 'var(--foreground)', lineHeight: 1.5, fontWeight: 500 }}>{r}</span>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.75rem', flexShrink: 0, marginTop: 2 }}>•</span>
+                  <span style={{ fontSize: '0.83rem', color: 'var(--foreground)', lineHeight: 1.55, fontWeight: 500 }}>{r}</span>
                 </div>
               ))}
             </div>
 
             {/* Tech used */}
             <div style={{ paddingTop: 18, borderTop: '1px solid var(--border)', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {['React', 'React Native', 'TypeScript', 'Django', 'Redux Toolkit', 'AWS S3', 'REST APIs', 'Expo'].map(t => (
+              {['React', 'React Native (Expo)', 'TypeScript', 'Django', 'Redux Toolkit', 'AWS S3', 'AWS EC2', 'Gunicorn', 'Nginx', 'RESTful APIs'].map(t => (
                 <span key={t} className="skill-chip">{t}</span>
               ))}
             </div>
@@ -755,9 +777,19 @@ function CorporateTraining() {
   const titleRef = useReveal()
   const cardRef = useReveal()
 
+  const trainingDetails = [
+    'Successfully completed an intensive corporate training program in Java Full Stack Development.',
+    'Strengthened programming fundamentals through hands-on coding exercises and practical assignments.',
+    'Learned Core Java, including Object-Oriented Programming (OOP), exception handling, collections, multithreading, and file handling.',
+    'Gained a solid understanding of SQL, including database design, joins, normalization, stored procedures, and query optimization.',
+    'Studied Web Technologies, including HTML5, CSS3, JavaScript, HTTP, and responsive web design principles.',
+    'Developed a strong foundation in software development methodologies, debugging, and problem-solving.',
+  ]
+
   const covered = [
-    'Core Java', 'Advanced Java', 'JDBC', 'Servlets', 'JSP',
-    'Hibernate', 'Spring Framework', 'SQL', 'HTML & CSS', 'JavaScript', 'Web Technologies',
+    'Core Java', 'OOP', 'Exception Handling', 'Collections Framework', 'Multithreading',
+    'File Handling', 'SQL & Joins', 'Database Normalization', 'Stored Procedures', 'Query Optimization',
+    'HTML5 & CSS3', 'JavaScript', 'HTTP Protocol', 'Responsive Web Design',
   ]
 
   return (
@@ -788,7 +820,7 @@ function CorporateTraining() {
               </div>
               <div>
                 <h3 style={{ fontWeight: 800, fontSize: '1.2rem', color: 'var(--foreground)', letterSpacing: '-0.01em' }}>Java Full Stack Development</h3>
-                <div style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.88rem' }}>JSpiders Kolkata</div>
+                <div style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.88rem' }}>JSpiders, Kolkata</div>
               </div>
             </div>
             <div style={{
@@ -798,14 +830,25 @@ function CorporateTraining() {
               borderRadius: 10, flexShrink: 0,
             }}>
               <div className="font-mono" style={{ fontSize: '0.6rem', color: 'var(--foreground-muted)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 4 }}>Duration</div>
-              <div style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--foreground)' }}>6 Months</div>
-              <div className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)', marginTop: 3 }}>Jul 2024 – Jan 2025</div>
+              <div style={{ fontWeight: 800, fontSize: '1rem', color: 'var(--foreground)' }}>~9 Months</div>
+              <div className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)', marginTop: 3 }}>15 July 2024 – March 2025</div>
             </div>
           </div>
 
-          <p style={{ color: 'var(--foreground-muted)', lineHeight: 1.75, marginBottom: 22, fontSize: '0.9rem', maxWidth: 640 }}>
-            Intensive corporate training focused on building strong backend fundamentals, object-oriented programming, database management, and enterprise application development using the Java ecosystem.
-          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 10, marginBottom: 24 }}>
+            {trainingDetails.map((td, i) => (
+              <div key={i} style={{
+                display: 'flex', alignItems: 'flex-start', gap: 9,
+                padding: '11px 13px',
+                background: 'var(--background)',
+                boxShadow: 'var(--shadow-recessed)',
+                borderRadius: 8,
+              }}>
+                <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '0.75rem', flexShrink: 0, marginTop: 2 }}>✓</span>
+                <span style={{ fontSize: '0.83rem', color: 'var(--foreground)', lineHeight: 1.5, fontWeight: 500 }}>{td}</span>
+              </div>
+            ))}
+          </div>
 
           <div className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>
             Curriculum Covered
@@ -825,9 +868,9 @@ function CorporateTraining() {
 function Education() {
   const titleRef = useReveal()
   const degrees = [
-    { level: 'Bachelor of Science', field: 'Computer Science', institution: 'Manbhum Mahavidyalaya', result: 'CGPA 7.39', icon: '🎓' },
-    { level: 'Higher Secondary',    field: 'Science Stream',   institution: 'West Bengal Board',      result: '66.6%',    icon: '📚' },
-    { level: 'Secondary',           field: 'WBBSE',             institution: 'West Bengal Board',      result: 'Passed',   icon: '🏫' },
+    { level: 'Bachelor of Science', field: 'Computer Science', institution: 'Manbhum Mahavidyalaya', period: '2021–2024', result: 'CGPA: 7.39', icon: '🎓' },
+    { level: 'Higher Secondary (Class XII)', field: 'Science Stream', institution: 'H.K.S.G.C.M High School', period: '2019–2021', result: '66.6%', icon: '📚' },
+    { level: 'Secondary (Class X)', field: 'General Studies', institution: 'Jambad Anchalik High School', period: '2019', result: 'Passed', icon: '🏫' },
   ]
 
   return (
@@ -854,8 +897,11 @@ function Education() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <span style={{ fontSize: '1.2rem' }}>{deg.icon}</span>
                     <div>
-                      <div className="font-mono" style={{ fontSize: '0.6rem', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>{deg.level}</div>
-                      <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '0.95rem' }}>{deg.institution}</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <span className="font-mono" style={{ fontSize: '0.6rem', color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{deg.level}</span>
+                        <span className="font-mono" style={{ fontSize: '0.62rem', color: 'var(--foreground-muted)' }}>• {deg.period}</span>
+                      </div>
+                      <div style={{ fontWeight: 700, color: 'var(--foreground)', fontSize: '0.95rem', marginTop: 2 }}>{deg.institution}</div>
                       <div style={{ color: 'var(--foreground-muted)', fontSize: '0.8rem' }}>{deg.field}</div>
                     </div>
                   </div>
@@ -876,13 +922,13 @@ function Education() {
 function WhyHireMe() {
   const titleRef = useReveal()
   const strengths = [
-    { icon: '⚡', title: 'Production-Level React', desc: 'Builds scalable, performant React applications following modern best practices and clean architecture.' },
-    { icon: '📱', title: 'Mobile Development',     desc: 'Cross-platform expertise with React Native and Expo — from architecture to deployment.' },
-    { icon: '🔗', title: 'REST API Integration',   desc: 'Experienced in designing and consuming REST APIs with Django and integrating third-party services.' },
-    { icon: '🎨', title: 'Clean UI Development',   desc: 'Sharp eye for detail — produces polished, accessible, and responsive user interfaces.' },
-    { icon: '🏗', title: 'Full Stack Experience',  desc: 'End-to-end ownership of features, from database design to frontend delivery and deployment.' },
-    { icon: '🚀', title: 'Performance Optimization', desc: 'Applies code splitting, lazy loading, FlatList optimization, and profiling for fast experiences.' },
-    { icon: '🧩', title: 'Problem Solving',         desc: 'Tackles complex technical challenges with structured thinking and attention to edge cases.' },
+    { icon: '⚡', title: 'Full-Stack & Mobile', desc: 'Architects scalable web & mobile codebases using React, React Native (Expo), TypeScript, and Django.' },
+    { icon: '☁', title: 'AWS Cloud & Deployments', desc: 'Hands-on experience deploying Django & React apps to AWS EC2 with Gunicorn, Nginx, and managing AWS S3 storage.' },
+    { icon: '🔗', title: 'REST API & State Architecture', desc: 'Proficient in Redux Toolkit state design, API integrations, third-party services, and real-time UI updates.' },
+    { icon: '🎨', title: 'Clean UI & Design Systems', desc: 'Sharp eye for responsive design, component reusability, Tailwind CSS, and polished user experiences.' },
+    { icon: '🎓', title: 'Java & CS Fundamentals', desc: 'Strong foundation in Core Java, OOP, SQL databases, joins, normalization, stored procedures, and SDLC.' },
+    { icon: '🚀', title: 'Agile & Best Practices', desc: 'Active in code reviews, Agile sprints, technical planning, and maintaining high code quality.' },
+    { icon: '🧩', title: 'Measurable Business Impact', desc: 'Adept at translating complex requirements into reliable software that delivers real business value.' },
   ]
 
   return (
@@ -967,6 +1013,7 @@ function Contact({ onContactClick }: { onContactClick?: (e: React.MouseEvent) =>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32, marginTop: 4 }}>
             {[
               { icon: '✉', label: 'Email', value: 'udaychatterjee2003@gmail.com', href: 'mailto:udaychatterjee2003@gmail.com' },
+              { icon: '📞', label: 'Phone', value: '+91 89449 90853', href: 'tel:+918944990853' },
               { icon: '📍', label: 'Location', value: 'Kolkata, West Bengal, India', href: null },
               { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/uday-chatterjee-45a153319', href: 'https://www.linkedin.com/in/uday-chatterjee-45a153319' },
             ].map(item => (
@@ -1107,68 +1154,238 @@ export default function App() {
       })
 
       // Theme Colors
-      const primaryColor = '#111827' // dark grey/black
-      const secondaryColor = '#4b5563' // muted grey
-      const accentColor = '#ff4757' // red/accent color
+      const primaryColor = '#111827'
+      const secondaryColor = '#4b5563'
+      const accentColor = '#ff4757'
 
       // Margins & Dimensions
-      const marginX = 20
-      let currentY = 20
+      const marginX = 18
+      let currentY = 16
       const pageWidth = doc.internal.pageSize.getWidth() // 210mm
-      const usableWidth = pageWidth - (marginX * 2) // 170mm
+      const usableWidth = pageWidth - (marginX * 2) // 174mm
+
+      const checkPageBreak = (neededHeight: number) => {
+        if (currentY + neededHeight > 280) {
+          doc.addPage()
+          currentY = 16
+        }
+      }
 
       // Helper function to draw headings
       const drawHeading = (text: string) => {
-        currentY += 8
+        checkPageBreak(16)
+        currentY += 6
         doc.setFont('helvetica', 'bold')
-        doc.setFontSize(13)
+        doc.setFontSize(12)
         doc.setTextColor(primaryColor)
         doc.text(text, marginX, currentY)
         
-        // Draw horizontal separator line
         currentY += 2
-        doc.setDrawColor(220, 225, 230) // light border
+        doc.setDrawColor(220, 225, 230)
         doc.setLineWidth(0.4)
         doc.line(marginX, currentY, pageWidth - marginX, currentY)
-        currentY += 6
+        currentY += 5
       }
 
       // Header - Name
       doc.setFont('helvetica', 'bold')
-      doc.setFontSize(24)
+      doc.setFontSize(22)
       doc.setTextColor(primaryColor)
       doc.text("UDAY CHATTERJEE", marginX, currentY)
 
       // Header - Title
-      currentY += 7
+      currentY += 6
       doc.setFont('helvetica', 'bold')
-      doc.setFontSize(12)
+      doc.setFontSize(11)
       doc.setTextColor(accentColor)
-      doc.text("SOFTWARE DEVELOPER", marginX, currentY)
+      doc.text("SOFTWARE DEVELOPER  |  FULL-STACK & MOBILE APPLICATION DEVELOPMENT", marginX, currentY)
 
       // Header - Contact Details
-      currentY += 6
-      doc.setFont('helvetica', 'normal')
-      doc.setFontSize(9)
-      doc.setTextColor(secondaryColor)
-      doc.text("Email: udaychatterjee2003@gmail.com   |   Kolkata, West Bengal, India", marginX, currentY)
-      
       currentY += 5
+      doc.setFont('helvetica', 'normal')
+      doc.setFontSize(8.5)
+      doc.setTextColor(secondaryColor)
+      doc.text("Email: udaychatterjee2003@gmail.com   |   Phone: +91 89449 90853   |   Location: Kolkata, West Bengal, India", marginX, currentY)
+      
+      currentY += 4.5
       doc.text("LinkedIn: linkedin.com/in/uday-chatterjee-45a153319", marginX, currentY)
 
-      // Professional Summary
-      drawHeading("PROFESSIONAL SUMMARY")
+      // Career Objective
+      drawHeading("CAREER OBJECTIVE")
       doc.setFont('helvetica', 'normal')
+      doc.setFontSize(9)
+      doc.setTextColor(primaryColor)
+      const objectiveText = "Results-driven Software Developer with a BSc in Computer Science and over a year of hands-on industry experience building scalable full-stack and cross-platform mobile applications. Proven ability to architect clean, maintainable codebases using modern technologies including React, React Native, TypeScript, Django, and AWS. Adept at translating complex requirements into intuitive user experiences and passionate about continuous learning, clean code practices, and delivering measurable business impact."
+      const splitObjective = doc.splitTextToSize(objectiveText, usableWidth)
+      doc.text(splitObjective, marginX, currentY)
+      currentY += (splitObjective.length * 4) + 1
+
+      // Professional Experience
+      drawHeading("PROFESSIONAL EXPERIENCE (2 Years + Corporate Experience)")
+      
+      doc.setFont('helvetica', 'bold')
+      doc.setFontSize(10.5)
+      doc.setTextColor(primaryColor)
+      doc.text("Software Developer", marginX, currentY)
+      
+      doc.setFont('helvetica', 'normal')
+      doc.setFontSize(8.5)
+      const dateStr = "April 2025 – Present (1 Year 6 Months)"
+      const dateWidth = doc.getTextWidth(dateStr)
+      doc.text(dateStr, pageWidth - marginX - dateWidth, currentY)
+
+      currentY += 4.5
+      doc.setFont('helvetica', 'bold')
+      doc.setFontSize(9)
+      doc.setTextColor(secondaryColor)
+      doc.text("Mindscale Infinity Solutions", marginX, currentY)
+
+      currentY += 5
+      doc.setFont('helvetica', 'normal')
+      doc.setFontSize(8.5)
+      doc.setTextColor(primaryColor)
+      
+      const responsibilities = [
+        "Developed and maintained full-stack web and mobile applications using React, React Native, TypeScript, and Django.",
+        "Collaborated with cross-functional teams to design RESTful APIs, manage cloud storage via AWS S3, and integrate third-party services.",
+        "Led frontend architecture decisions implementing Redux Toolkit.",
+        "Participated in Agile sprints, code reviews, and technical planning.",
+        "Executed production migration and deployment of a full-stack web application, including Django backend, database, media assets, and React/Vite frontend within an existing AWS EC2 environment.",
+        "Configured and deployed Django applications using Gunicorn, systemd, and Nginx reverse proxy, implementing separate API routing while preserving existing production services."
+      ]
+
+      responsibilities.forEach(resp => {
+        const bulletText = doc.splitTextToSize(resp, usableWidth - 5)
+        checkPageBreak(bulletText.length * 3.8 + 2)
+        doc.text("•", marginX, currentY)
+        doc.text(bulletText, marginX + 4, currentY)
+        currentY += (bulletText.length * 3.8) + 1.2
+      })
+      currentY += 1
+
+      // Key Projects
+      drawHeading("KEY PROJECTS")
+
+      const projectsPdf = [
+        {
+          title: "Full-Stack Blog Platform",
+          period: "April 2025 – Jun 2025",
+          stack: "React • TypeScript • Django • AWS S3 • Tailwind CSS",
+          bullets: [
+            "Architected scalable blogging platform.",
+            "Implemented secure AWS S3 media handling.",
+            "Built responsive UI.",
+            "Engineered rich-text content creation.",
+            "Optimised SEO."
+          ]
+        },
+        {
+          title: "Restaurant Order Management System",
+          period: "Jun 2025 – Aug 2025",
+          stack: "React • TypeScript • Redux Toolkit • Tailwind CSS",
+          bullets: [
+            "Developed ordering frontend.",
+            "Architected Redux state.",
+            "Designed responsive dashboard.",
+            "Built reusable menu grid.",
+            "Integrated toast notifications."
+          ]
+        },
+        {
+          title: "Geology & Minerals Learning App – Mobile Frontend",
+          period: "Sep 2025 – Nov 2025",
+          stack: "React Native (Expo) • TypeScript • Redux Toolkit",
+          bullets: [
+            "Built complete mobile frontend.",
+            "Developed responsive masonry gallery.",
+            "Created interactive detail views.",
+            "Designed colour-coded geologic time scale.",
+            "Implemented quiz feature.",
+            "Integrated external mineral APIs."
+          ]
+        }
+      ]
+
+      projectsPdf.forEach(p => {
+        checkPageBreak(20)
+        doc.setFont('helvetica', 'bold')
+        doc.setFontSize(9.5)
+        doc.setTextColor(primaryColor)
+        doc.text(p.title, marginX, currentY)
+
+        doc.setFont('helvetica', 'normal')
+        doc.setFontSize(8)
+        const pDateWidth = doc.getTextWidth(p.period)
+        doc.text(p.period, pageWidth - marginX - pDateWidth, currentY)
+
+        currentY += 4
+        doc.setFont('helvetica', 'bold')
+        doc.setFontSize(8)
+        doc.setTextColor(secondaryColor)
+        doc.text(p.stack, marginX, currentY)
+
+        currentY += 4.5
+        doc.setFont('helvetica', 'normal')
+        doc.setFontSize(8.5)
+        doc.setTextColor(primaryColor)
+
+        p.bullets.forEach(b => {
+          const bText = doc.splitTextToSize(b, usableWidth - 5)
+          checkPageBreak(bText.length * 3.6 + 1)
+          doc.text("•", marginX, currentY)
+          doc.text(bText, marginX + 4, currentY)
+          currentY += (bText.length * 3.6) + 1
+        })
+        currentY += 2
+      })
+
+      // Corporate Training
+      drawHeading("CORPORATE TRAINING (9 months)")
+      
+      checkPageBreak(25)
+      doc.setFont('helvetica', 'bold')
       doc.setFontSize(10)
       doc.setTextColor(primaryColor)
-      const summaryText = "Results-driven Software Developer specializing in Full-Stack and Cross-Platform Application Development. Experienced in building scalable web and mobile applications using React, React Native, Django, TypeScript, Redux Toolkit, AWS S3, and modern frontend architecture."
-      const splitSummary = doc.splitTextToSize(summaryText, usableWidth)
-      doc.text(splitSummary, marginX, currentY)
-      currentY += (splitSummary.length * 5) + 2
+      doc.text("Java Full Stack Development (Corporate Training)", marginX, currentY)
+      
+      doc.setFont('helvetica', 'normal')
+      doc.setFontSize(8)
+      const trDate = "15 July 2024 – March 2025 (Approx. 9 Months)"
+      const trWidth = doc.getTextWidth(trDate)
+      doc.text(trDate, pageWidth - marginX - trWidth, currentY)
+
+      currentY += 4
+      doc.setFont('helvetica', 'bold')
+      doc.setFontSize(8.5)
+      doc.setTextColor(secondaryColor)
+      doc.text("JSpiders, Kolkata", marginX, currentY)
+
+      currentY += 5
+      doc.setFont('helvetica', 'normal')
+      doc.setFontSize(8.5)
+      doc.setTextColor(primaryColor)
+
+      const trBullets = [
+        "Successfully completed an intensive corporate training program in Java Full Stack Development.",
+        "Strengthened programming fundamentals through hands-on coding exercises and practical assignments.",
+        "Learned Core Java, including Object-Oriented Programming (OOP), exception handling, collections, multithreading, and file handling.",
+        "Gained a solid understanding of SQL, including database design, joins, normalization, stored procedures, and query optimization.",
+        "Studied Web Technologies, including HTML5, CSS3, JavaScript, HTTP, and responsive web design principles.",
+        "Developed a strong foundation in software development methodologies, debugging, and problem-solving."
+      ]
+
+      trBullets.forEach(b => {
+        const bText = doc.splitTextToSize(b, usableWidth - 5)
+        checkPageBreak(bText.length * 3.6 + 1)
+        doc.text("•", marginX, currentY)
+        doc.text(bText, marginX + 4, currentY)
+        currentY += (bText.length * 3.6) + 1
+      })
+      currentY += 1
 
       // Technical Skills
       drawHeading("TECHNICAL SKILLS")
-      doc.setFontSize(9.5)
+      doc.setFontSize(8.5)
       
       const skillCategories = [
         { name: "Programming:", skills: "Java, JavaScript, TypeScript" },
@@ -1184,116 +1401,62 @@ export default function App() {
       ]
 
       skillCategories.forEach(cat => {
+        checkPageBreak(5)
         doc.setFont('helvetica', 'bold')
         doc.text(cat.name, marginX, currentY)
         
-        // Measure width of category name to offset the skills text
         const catWidth = doc.getTextWidth(cat.name) + 3
         doc.setFont('helvetica', 'normal')
         
         const skillsText = doc.splitTextToSize(cat.skills, usableWidth - catWidth)
         doc.text(skillsText, marginX + catWidth, currentY)
         
-        currentY += Math.max(5, skillsText.length * 4.5)
+        currentY += Math.max(4.2, skillsText.length * 4)
       })
-      currentY += 2
-
-      // Professional Experience
-      drawHeading("PROFESSIONAL EXPERIENCE")
-      
-      // Job 1
-      doc.setFont('helvetica', 'bold')
-      doc.setFontSize(11)
-      doc.setTextColor(primaryColor)
-      doc.text("Software Developer", marginX, currentY)
-      
-      doc.setFont('helvetica', 'normal')
-      const dateStr = "April 2024 - Present"
-      const dateWidth = doc.getTextWidth(dateStr)
-      doc.text(dateStr, pageWidth - marginX - dateWidth, currentY)
-
-      currentY += 5
-      doc.setFont('helvetica', 'bold')
-      doc.setFontSize(9.5)
-      doc.setTextColor(secondaryColor)
-      doc.text("Mindscale Infinity Solutions  |  Full-Time", marginX, currentY)
-
-      currentY += 6
-      doc.setFont('helvetica', 'normal')
-      doc.setFontSize(9.5)
-      doc.setTextColor(primaryColor)
-      
-      const responsibilities = [
-        "Developing scalable frontend architecture using React & TypeScript to ensure clean and testable modular code.",
-        "Building reusable, accessible, and responsive UI component libraries following strict design system guidelines.",
-        "Designing and integrating REST API endpoints with Django to support dynamic and stateful features.",
-        "Managing complex application state using Redux Toolkit to reduce prop-drilling and optimize render counts.",
-        "Building responsive, high-performance cross-platform mobile apps using React Native and Expo.",
-        "Implementing AWS S3 configurations for secure, performant media storage, retrieval, and delivery."
-      ]
-
-      responsibilities.forEach(resp => {
-        doc.text("-", marginX, currentY)
-        const bulletText = doc.splitTextToSize(resp, usableWidth - 5)
-        doc.text(bulletText, marginX + 4, currentY)
-        currentY += (bulletText.length * 4.5) + 1.5
-      })
-      currentY += 2
-
-      // Formal Training
-      drawHeading("FORMAL TRAINING")
-      
-      doc.setFont('helvetica', 'bold')
-      doc.setFontSize(11)
-      doc.setTextColor(primaryColor)
-      doc.text("Java Full Stack Development", marginX, currentY)
-      
-      doc.setFont('helvetica', 'normal')
-      const trainingDate = "Jul 2024 - Jan 2025"
-      const trDateWidth = doc.getTextWidth(trainingDate)
-      doc.text(trainingDate, pageWidth - marginX - trDateWidth, currentY)
-
-      currentY += 5
-      doc.setFont('helvetica', 'bold')
-      doc.setFontSize(9.5)
-      doc.setTextColor(secondaryColor)
-      doc.text("JSpiders Kolkata  |  6-Month Corporate Training", marginX, currentY)
-
-      currentY += 6
-      doc.setFont('helvetica', 'normal')
-      doc.setTextColor(primaryColor)
-      const trainingDesc = "Intensive professional training focusing on core and advanced Java, JDBC, Servlets, JSP, Hibernate, Spring Framework, SQL, and enterprise-grade web application architecture."
-      const splitTraining = doc.splitTextToSize(trainingDesc, usableWidth)
-      doc.text(splitTraining, marginX, currentY)
-      currentY += (splitTraining.length * 4.5) + 4
+      currentY += 1
 
       // Education
       drawHeading("EDUCATION")
       
       const eduList = [
-        { degree: "Bachelor of Science in Computer Science", institution: "Manbhum Mahavidyalaya", result: "CGPA: 7.39" },
-        { degree: "Higher Secondary (Science Stream)", institution: "West Bengal Board", result: "Percentage: 66.6%" },
-        { degree: "Secondary Education", institution: "West Bengal Board", result: "Passed" }
+        { degree: "BSc in Computer Science", institution: "Manbhum Mahavidyalaya (2021–2024)", result: "CGPA: 7.39" },
+        { degree: "Higher Secondary (Class XII)", institution: "H.K.S.G.C.M High School (2019–2021)", result: "66.6%" },
+        { degree: "Secondary (Class X)", institution: "Jambad Anchalik High School (2019)", result: "Passed" }
       ]
 
       eduList.forEach((edu, index) => {
+        checkPageBreak(9)
         doc.setFont('helvetica', 'bold')
-        doc.setFontSize(10)
+        doc.setFontSize(9)
         doc.text(edu.degree, marginX, currentY)
         
         const resStr = edu.result
         const resWidth = doc.getTextWidth(resStr)
         doc.text(resStr, pageWidth - marginX - resWidth, currentY)
 
-        currentY += 4.5
+        currentY += 4
         doc.setFont('helvetica', 'normal')
-        doc.setFontSize(9)
+        doc.setFontSize(8)
         doc.setTextColor(secondaryColor)
         doc.text(edu.institution, marginX, currentY)
         
-        currentY += index < eduList.length - 1 ? 6 : 0
+        currentY += index < eduList.length - 1 ? 5 : 0
         doc.setTextColor(primaryColor)
       })
+
+      // Declaration
+      drawHeading("DECLARATION")
+      checkPageBreak(14)
+      doc.setFont('helvetica', 'italic')
+      doc.setFontSize(8)
+      doc.setTextColor(secondaryColor)
+      doc.text("I hereby declare that all information provided in this résumé is true and accurate to the best of my knowledge and belief.", marginX, currentY)
+      currentY += 6
+      doc.setFont('helvetica', 'bold')
+      doc.text("Uday Chatterjee", marginX, currentY)
+      currentY += 4
+      doc.setFont('helvetica', 'normal')
+      doc.text("Kolkata, West Bengal  |  Date: 23 September 2026", marginX, currentY)
 
       doc.save("Uday_Chatterjee_Resume.pdf")
       showToast('✓ Resume PDF downloaded successfully!')
